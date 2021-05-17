@@ -31,9 +31,3 @@ main {
   width: 90%;
   margin: auto;
 }
-
-main .tweet {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}

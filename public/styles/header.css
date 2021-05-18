@@ -1,4 +1,4 @@
-header {
+.top-header {
   height: 400px;
   width: 100%;
   background-color: #d97700;
@@ -6,7 +6,6 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 120px;
   color: #fff;
   background-image: url("/images/cubes.png");
 }

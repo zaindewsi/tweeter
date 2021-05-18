@@ -1,7 +1,3 @@
-$(document).ready(() => {
-  console.log("dom loaded");
-});
-
 $("#tweet-text").on("input", function () {
   // Counter value
   const counter = $(this).closest("form").find(".counter")[0];

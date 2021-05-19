@@ -41,7 +41,9 @@ $(document).ready(function () {
     <article class="tweet">
           <header>
             <div class="tweet-user">
-              <img src="${tweet.user.avatars}" alt="User Avatar" />
+              <img src="${tweet.user.avatars}" alt="${
+      tweet.user.name
+    }'s avatar" />
               <p>${tweet.user.name}</p>
             </div>
             <p>${tweet.user.handle}</p>
@@ -62,4 +64,11 @@ $(document).ready(function () {
   };
 
   renderTweets(tweetData);
+
+  $(".new-tweet form").submit(function (event) {
+    event.preventDefault();
+    const tweet = $(this).serialize();
+
+    $.post("/tweets", tweet, null);
+  });
 });

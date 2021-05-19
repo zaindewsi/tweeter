@@ -4,33 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const tweetData = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1621270047919,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1621356447919,
-  },
-];
-
 $(document).ready(function () {
   const renderTweets = function (tweets) {
+    $("#tweets-container").empty();
     for (const tweet of tweets) {
       createTweetElement(tweet);
     }
@@ -63,12 +39,18 @@ $(document).ready(function () {
     `);
   };
 
-  renderTweets(tweetData);
-
   $(".new-tweet form").submit(function (event) {
     event.preventDefault();
     const tweet = $(this).serialize();
 
-    $.post("/tweets", tweet, null);
+    $.post("/tweets", tweet).then(() => loadTweets());
   });
+
+  const loadTweets = function () {
+    $.ajax("/tweets", { method: "GET" }).then(function (tweets) {
+      renderTweets(tweets);
+    });
+  };
+
+  loadTweets();
 });

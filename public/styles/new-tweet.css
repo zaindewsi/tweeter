@@ -33,3 +33,14 @@
 .new-tweet textarea:focus {
   outline: none;
 }
+
+.error {
+  background-color: rgba(255, 0, 0, 0.6);
+  color: white;
+  font-weight: bold;
+  margin: 0 auto 1em;
+  display: none;
+  padding: 0 1em;
+  width: 100%;
+  text-align: center;
+}

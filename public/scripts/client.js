@@ -19,20 +19,24 @@ $(document).ready(function () {
     const tweet = $(this).serialize();
     const tweetLength = $(this).children("#tweet-text").val().length;
 
-    if (tweetLength > 140) return alert("too long");
-    if (tweetLength === 0) return alert("tweet cannot be empty");
+    // Validation errors
+    if (tweetLength > 140) {
+      return $(".error")
+        .html(`<p>Tweet cannot exceed 140 characters</p>`)
+        .slideDown("fast");
+    }
+    if (tweetLength === 0) {
+      return $(".error").html(`<p>Tweet cannot be empty</p>`).slideDown("fast");
+    }
 
+    // Add tweet
     $.post("/tweets", tweet, () => loadTweets());
+
+    // Reset new-tweet section
     $("textarea").val("");
     $(".counter").val("140");
+    $("#tweet-text").css("height", "40px");
   });
-
-  const renderTweets = function (tweets) {
-    $("#tweets-container").empty();
-    for (const tweet of tweets) {
-      createTweetElement(tweet);
-    }
-  };
 
   const createTweetElement = function (tweet) {
     $("#tweets-container").prepend(`
@@ -57,6 +61,15 @@ $(document).ready(function () {
           </footer>
         </article>
     `);
+  };
+
+  // Display tweets on page
+
+  const renderTweets = function (tweets) {
+    $("#tweets-container").empty();
+    for (const tweet of tweets) {
+      createTweetElement(tweet);
+    }
   };
 
   const loadTweets = function () {

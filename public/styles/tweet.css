@@ -23,8 +23,9 @@ article.tweet header {
 }
 
 .tweet-body {
-  margin: 0 1em;
+  margin: 1em;
   border-bottom: 4px #000 solid;
+  overflow-wrap: break-word;
 }
 
 article.tweet footer {

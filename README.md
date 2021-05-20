@@ -1,5 +1,7 @@
 # Tweeter
 
+## <a href="https://tweeter-zaindewsi.herokuapp.com/" target="_blank">LIVE DEMO</a>
+
 Tweeter is a single-page Twitter clone that allows you to do share your thoughts in 140 chracters or less.
 
 I built this app using HTML, CSS/SASS, JavaScript, jQuery and AJAX to render tweets on the front end. On the back end, I used Node and Express to run the server and handle the tweet database.

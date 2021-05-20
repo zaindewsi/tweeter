@@ -1,5 +1,5 @@
 .top-header {
-  height: 400px;
+  min-height: 400px;
   width: 100%;
   background-color: #d97700;
   display: flex;
@@ -8,4 +8,5 @@
   align-items: center;
   color: #fff;
   background-image: url("/images/cubes.png");
+  padding: 120px 0 60px;
 }

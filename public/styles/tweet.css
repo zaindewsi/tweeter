@@ -39,7 +39,7 @@ article.tweet footer {
   color: #4056a1;
 }
 
-.fas:hover {
+.icons .fas:hover {
   color: #d97700;
   cursor: pointer;
 }

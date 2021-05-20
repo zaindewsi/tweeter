@@ -12,6 +12,34 @@ $(document).ready(function () {
     return div.innerHTML;
   };
 
+  $(window).on("scroll", function () {
+    if ($(this).scrollTop()) {
+      $(".fa-angle-double-up").css("display", "flex");
+    } else {
+      $(".fa-angle-double-up").css("display", "none");
+    }
+  });
+
+  // Write new tweet button animation
+  const writeTweet = function () {
+    if ($(".new-tweet").is(":hidden")) {
+      $(".new-tweet").slideDown("slow", () => {
+        $("#tweet-text").focus();
+      });
+      $("html, body").animate({ scrollTop: 0 }, "fast");
+    } else {
+      $(".new-tweet").slideUp("fast");
+    }
+  };
+
+  $(".nav-btn").on("click", function () {
+    writeTweet();
+  });
+
+  $(".fa-angle-double-up").on("click", function () {
+    writeTweet();
+  });
+
   // Tweet creation
   $(".new-tweet form").submit(function (event) {
     event.preventDefault();

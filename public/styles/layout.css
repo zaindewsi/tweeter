@@ -31,3 +31,25 @@ main {
   width: 90%;
   margin: auto;
 }
+
+.fa-angle-double-up {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  font-size: 40px;
+  color: white;
+  border: 1px red solid;
+  border-radius: 100%;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  transition: all 0.2s ease-in-out;
+  display: none;
+}
+.fa-angle-double-up:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}

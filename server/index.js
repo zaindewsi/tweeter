@@ -4,7 +4,7 @@
 
 let PORT = process.env.PORT;
 if (!PORT) {
-  port = 8080;
+  PORT = 8080;
 }
 const express = require("express");
 const bodyParser = require("body-parser");

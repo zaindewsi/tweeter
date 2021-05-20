@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
+$(document).ready(function () {
   // Escape method to avoid XSS attacks
   const esc = (str) => {
     let div = document.createElement("div");
@@ -12,7 +12,9 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
-  $(window).on("scroll", function() {
+  // Scroll to top
+
+  $(window).on("scroll", function () {
     if ($(this).scrollTop()) {
       $(".fa-angle-double-up").css("display", "flex");
     } else {
@@ -20,28 +22,36 @@ $(document).ready(function() {
     }
   });
 
+  const scrollToTop = function () {
+    $("html, body").animate({ scrollTop: 0 }, "fast");
+  };
+
+  $("nav span").on("click", function () {
+    scrollToTop();
+  });
+
   // Write new tweet button animation
-  const writeTweet = function() {
+  const writeTweet = function () {
     if ($(".new-tweet").is(":hidden")) {
+      scrollToTop();
       $(".new-tweet").slideDown("slow", () => {
         $("#tweet-text").focus();
       });
-      $("html, body").animate({ scrollTop: 0 }, "fast");
     } else {
       $(".new-tweet").slideUp("fast");
     }
   };
 
-  $(".nav-btn").on("click", function() {
+  $(".nav-btn").on("click", function () {
     writeTweet();
   });
 
-  $(".fa-angle-double-up").on("click", function() {
+  $(".fa-angle-double-up").on("click", function () {
     writeTweet();
   });
 
   // Tweet creation
-  $(".new-tweet form").submit(function(event) {
+  $(".new-tweet form").submit(function (event) {
     event.preventDefault();
 
     const tweet = $(this).serialize();
@@ -66,7 +76,7 @@ $(document).ready(function() {
     $("#tweet-text").css("height", "40px");
   });
 
-  const createTweetElement = function(tweet) {
+  const createTweetElement = function (tweet) {
     $("#tweets-container").prepend(`
     <article class="tweet">
           <header>
@@ -93,14 +103,14 @@ $(document).ready(function() {
 
   // Display tweets on page
 
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     $("#tweets-container").empty();
     for (const tweet of tweets) {
       createTweetElement(tweet);
     }
   };
 
-  const loadTweets = function() {
+  const loadTweets = function () {
     $.get("/tweets", (tweets) => renderTweets(tweets));
   };
 

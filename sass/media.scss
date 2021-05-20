@@ -21,6 +21,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+
     margin: 10em 2em 0;
   }
 
@@ -32,6 +33,7 @@
     top: 140px;
   }
 }
+
 @media screen and (max-width: 768px) {
   nav {
     font-size: 0.75em;

@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 $(document).ready(function () {
   // Escape method to avoid XSS attacks
   const esc = (str) => {
@@ -13,7 +7,6 @@ $(document).ready(function () {
   };
 
   // Scroll to top
-
   $(window).on("scroll", function () {
     if ($(this).scrollTop()) {
       $(".fa-angle-double-up").css("display", "flex");
@@ -102,7 +95,6 @@ $(document).ready(function () {
   };
 
   // Display tweets on page
-
   const renderTweets = function (tweets) {
     $("#tweets-container").empty();
     for (const tweet of tweets) {

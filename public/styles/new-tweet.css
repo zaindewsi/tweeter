@@ -1,30 +1,25 @@
 .new-tweet {
   display: none;
 }
-
 .new-tweet form {
   display: flex;
   flex-direction: column;
 }
-
 .new-tweet footer {
   display: flex;
   font-family: Bungee, sans-serif;
   justify-content: space-between;
   margin: 1em 0;
 }
-
 .new-tweet button {
   background-color: #4056a1;
   color: #fff;
 }
-
 .new-tweet button:hover {
   transition: all 0.2s ease-in-out;
   transform: scale(1.02);
   cursor: pointer;
 }
-
 .new-tweet textarea {
   background-color: transparent;
   border: none;
@@ -33,7 +28,6 @@
   height: 45px;
   margin-top: 1em;
 }
-
 .new-tweet textarea:focus {
   outline: none;
 }

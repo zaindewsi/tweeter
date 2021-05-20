@@ -10,10 +10,10 @@
     position: fixed;
     height: 120px;
     font-size: 1.5rem;
-  }
 
-  nav span {
-    font-size: 2em;
+    span {
+      font-size: 2em;
+    }
   }
 
   .container {
@@ -21,7 +21,6 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-
     margin: 10em 2em 0;
   }
 

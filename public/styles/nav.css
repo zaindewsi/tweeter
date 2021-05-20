@@ -10,14 +10,12 @@ nav {
   top: 0;
   position: fixed;
 }
-
 nav span {
   font-family: Bungee, sans-serif;
   display: flex;
   align-items: center;
   font-size: 1.5em;
 }
-
 nav span:hover {
   cursor: pointer;
 }
@@ -32,7 +30,6 @@ nav span:hover {
   text-decoration: none;
   color: white;
 }
-
 .nav-btn:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -41,7 +38,6 @@ nav span:hover {
 .nav-btn p {
   margin: 0;
 }
-
 .nav-btn i {
   color: red;
   margin-top: 5px;
@@ -49,7 +45,6 @@ nav span:hover {
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
-
 .nav-btn i:hover {
   color: red;
 }

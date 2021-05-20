@@ -9,17 +9,17 @@ nav {
   justify-content: space-between;
   top: 0;
   position: fixed;
-}
 
-nav span {
-  font-family: Bungee, sans-serif;
-  display: flex;
-  align-items: center;
-  font-size: 1.5em;
-}
+  span {
+    font-family: Bungee, sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
 
-nav span:hover {
-  cursor: pointer;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .nav-btn {
@@ -31,27 +31,29 @@ nav span:hover {
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   color: white;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
 }
 
-.nav-btn:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
+.nav-btn {
+  p {
+    margin: 0;
+  }
 
-.nav-btn p {
-  margin: 0;
-}
+  i {
+    color: red;
+    margin-top: 5px;
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 
-.nav-btn i {
-  color: red;
-  margin-top: 5px;
-  animation-name: bounce;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-
-.nav-btn i:hover {
-  color: red;
+    &:hover {
+      color: red;
+    }
+  }
 }
 
 @keyframes bounce {

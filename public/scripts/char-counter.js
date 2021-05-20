@@ -1,6 +1,6 @@
-$(document).ready(function () {
+$(document).ready(function() {
   $("#tweet-text")
-    .on("input", function () {
+    .on("input", function() {
       //Resize textarea on input
       this.style.height = "";
       this.style.height = this.scrollHeight + 4 + "px";
